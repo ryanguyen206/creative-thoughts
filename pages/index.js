@@ -20,6 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     getPosts();
+   console.log(allPosts);
   }, []);
 
   return (
@@ -31,12 +32,13 @@ export default function Home() {
       </Head>
 
       <div className="my-12 text-lg font-medium">
-        <h2>See what other people are saying</h2>
+        <h2 className="font-bold">See what other people are saying</h2>
         {allPosts.map((post) => (
+        
           <Message key={post.id} {...post}>
             <Link href={{ pathname: `/${post.id}`, query: { ...post }}}>
               <button>
-                {post.comments?.length > 0 ? post.comments?.length : 0} comments
+                <p className="hover:bg-cyan-100">{post.comments?.length > 0 ? post.comments?.length : 0} comments</p>
               </button>
             </Link>
           </Message>

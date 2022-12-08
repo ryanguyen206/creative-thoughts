@@ -41,7 +41,7 @@ const Dashboard = () => {
   
 return (
     <div> 
-        <h1>Your Posts</h1>
+        <h1 className='font-bold text-lg'>Your Posts</h1>
         <div>
            {posts.map(post => {
             return (
